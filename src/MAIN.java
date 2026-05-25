@@ -1,8 +1,7 @@
 import java.util.Scanner;
+public class MAIN {
 
-public class Main {
-
-    public static void main(String[] args) {
+  public static void main(String[] args){
 
         REGISTRATION registration = new REGISTRATION();
         registration.Register();
