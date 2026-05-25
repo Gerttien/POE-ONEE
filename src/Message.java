@@ -30,8 +30,8 @@ public class Message {
 
             System.out.println("Welcome to Quick Chat");
             System.out.println("Select transaction:");
-            System.out.println("Option 1 - Select Quickchat");
-            System.out.println("Option 2 - Send Quickchat");
+            System.out.println("Option 1 - Select Message");
+            System.out.println("Option 2 - Send Message");
             System.out.println("Option 3 - Quit");
             System.out.print("Enter your choice (1,2,or 3): ");
 
@@ -42,14 +42,14 @@ public class Message {
 
                 case 1:
 
-                    System.out.println("You selected: Select Quickchat");
+                    System.out.println("You selected: Select Message");
                     System.out.println("This feature is coming soon, please stay tuned");
 
                     break;
 
                 case 2:
 
-                    System.out.println("You selected: Send Quickchat");
+                    System.out.println("You selected: Send Message");
 
                     String recipient;
 
@@ -59,13 +59,13 @@ public class Message {
 
                     } while (!(recipient.startsWith("+27") && recipient.length() == 12));
 
-                    System.out.print("Enter your Quickchat (must be 250 characters or less): ");
+                    System.out.print("Enter your Message (must be 250 characters or less): ");
 
                     String message = scanner.nextLine();
 
                     if (message.length() > 250) {
 
-                        System.out.println("Please enter a Quickchat of less than 250 characters.");
+                        System.out.println("Please enter a Message of less than 250 characters.");
                         break;
                     }
 
@@ -79,9 +79,9 @@ public class Message {
                     System.out.println("Message Hash: " + messageHash);
 
                     System.out.println("Choose an option:");
-                    System.out.println("Option 1 - Send Quickchat");
-                    System.out.println("Option 2 - Disregard Quickchat");
-                    System.out.println("Option 3 - Store Quickchat to send later");
+                    System.out.println("Option 1 - Send Message");
+                    System.out.println("Option 2 - Disregard Message");
+                    System.out.println("Option 3 - Store Message to send later");
 
                     int subChoice = scanner.nextInt();
 
@@ -91,20 +91,20 @@ public class Message {
 
                         case 1:
 
-                            System.out.println("Sending Quickchat to " + recipient + "...");
+                            System.out.println("Sending Message to " + recipient + "...");
                             System.out.println("Message sent successfully");
 
                             break;
 
                         case 2:
 
-                            System.out.println("Quickchat disregarded.");
+                            System.out.println("Message disregarded.");
 
                             break;
 
                         case 3:
 
-                            System.out.println("Quickchat stored to send later");
+                            System.out.println("Message stored to send later");
 
                             storeMessageToTextFile(
                                     messageId,
@@ -117,7 +117,7 @@ public class Message {
 
                         default:
 
-                            System.out.println("Invalid option. Quickchat not processed");
+                            System.out.println("Invalid option. Message not processed");
 
                             break;
                     }
@@ -126,7 +126,7 @@ public class Message {
 
                 case 3:
 
-                    System.out.println("Quitting Quickchat. Goodbye!");
+                    System.out.println("Quitting Message. Goodbye!");
 
                     scanner.close();
 
