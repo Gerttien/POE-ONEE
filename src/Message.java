@@ -4,12 +4,15 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Message {
+    
+    // Keep track of total message sent in this session
     private static int messageCount = 0;
 
+    //Generate a unique message ID using current timestamp
     private static String generateMessageId() {
         return "MSG" + System.currentTimeMillis();
     }
-
+// Creates a hash from message ID,count,and first/last words for quick identification
     private static String generateMessageHash(String messageId, int count, String message) {
 
         String[] words = message.trim().split("\\s+");
@@ -21,7 +24,7 @@ public class Message {
         return messageId.substring(0, 2) + ":" + count + ":" +
                 first.toUpperCase() + last.toUpperCase();
     }
-
+//Display main menu and handles user input until user choose to quit
     public static void StartChat() {
 
         Scanner scanner = new Scanner(System.in);
@@ -53,6 +56,7 @@ public class Message {
 
                     String recipient;
 
+                    //Validates South African number format:must start with +27 and be 12 characters
                     do {
                         System.out.println("Enter your number (must start with +27 and be exactly 12 characters):");
                         recipient = scanner.nextLine();
@@ -142,7 +146,7 @@ public class Message {
             System.out.println();
         }
     }
-
+//Saves message details to stored_message.txt file for later user
     private static void storeMessageToTextFile(
             String id,
             String recipient,
@@ -165,4 +169,5 @@ public class Message {
             e.printStackTrace();
         }
     }
+
 }
